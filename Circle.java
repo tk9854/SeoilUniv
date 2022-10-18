@@ -3,16 +3,16 @@ public class Circle {
 	int radius; 
 	String name;
 	
-	public Circle() {// »ı¼ºÀÚ
+	public Circle() {// ìƒì„±ì
 		radius = 0;
-		name = "ÀÌ¸§ ¾øÀ½";
+		name = "ì´ë¦„ ì—†ìŒ";
 	}
-	public Circle(int radius) { // »ı¼ºÀÚ
-		radius = radius;
-		name = "ÀÌ¸§ ¾øÀ½";
+	public Circle(int radius) { // ìƒì„±ì
+		this.radius = radius;
+		name = "ì´ë¦„ ì—†ìŒ";
 	}
 	
-	public Circle(int radius, String name) {// »ı¼ºÀÚ
+	public Circle(int radius, String name) {// ìƒì„±ì
 		this.radius = radius;
 		this.name = name;
 	}
@@ -33,21 +33,21 @@ public class Circle {
 		return this.name;
 	}
 	
-	public double getArea() { // ÀÏ¹İ ¸Ş¼Òµå
+	public double getArea() { // ì¼ë°˜ ë©”ì†Œë“œ
 		return 3.14*radius*radius;
 	}
 	
 	
 	public static void main(String[] args) {
 		Circle pizza;
-		pizza = new Circle(10, "ÀÚ¹Ù ÇÇÀÚ");
+		pizza = new Circle(10, "ìë°” í”¼ì");
 		pizza.setRadius(100);
 		
-		System.out.println("¹İÁö¸§ : " + pizza.getRadius() +  " ¸éÀû : "+pizza.getArea());
+		System.out.println("ë°˜ì§€ë¦„ : " + pizza.getRadius() +  " ë©´ì  : "+pizza.getArea());
 		
 		Circle donut;
-		donut = new Circle(2, "ÀÚ¹Ù µµ³Ó");
-		System.out.println(donut.name+"¸éÀû : "+donut.getArea());
+		donut = new Circle(2, "ìë°” ë„ë„›");
+		System.out.println(donut.name+"ë©´ì  : "+donut.getArea());
 	}
 
 }
