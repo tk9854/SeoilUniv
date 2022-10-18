@@ -3,51 +3,65 @@ public class Circle {
 	int radius; 
 	String name;
 	
-	public Circle() {// ìƒì„±ì
-		radius = 0;
-		name = "ì´ë¦„ ì—†ìŒ";
-	}
-	public Circle(int radius) { // ìƒì„±ì
-		this.radius = radius;
-		name = "ì´ë¦„ ì—†ìŒ";
+	public Circle() {// »ı¼ºÀÚ
+		this(0, "ÀÌ¸§ ¾øÀ½");
 	}
 	
-	public Circle(int radius, String name) {// ìƒì„±ì
+	public Circle(int radius) { // »ı¼ºÀÚ
+		this(radius, "ÀÌ¸§ ¾øÀ½");
+	}
+	
+	public Circle(int radius, String name) {// »ı¼ºÀÚ
 		this.radius = radius;
 		this.name = name;
 	}
 	
-	public void setRadius(int radius) {
-		this.radius = radius;
-	}
-	
-	public int getRadius() {
-		return this.radius;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public String getName() {
-		return this.name;
-	}
-	
-	public double getArea() { // ì¼ë°˜ ë©”ì†Œë“œ
+
+	public double getArea() { // ÀÏ¹İ ¸Ş¼Òµå
 		return 3.14*radius*radius;
 	}
 	
 	
 	public static void main(String[] args) {
 		Circle pizza;
-		pizza = new Circle(10, "ìë°” í”¼ì");
-		pizza.setRadius(100);
+		pizza = new Circle(10, "ÀÚ¹Ù ÇÇÀÚ");
 		
-		System.out.println("ë°˜ì§€ë¦„ : " + pizza.getRadius() +  " ë©´ì  : "+pizza.getArea());
+		System.out.println("¹İÁö¸§ : " + pizza.name +  " ¸éÀû : "+pizza.getArea());
 		
 		Circle donut;
-		donut = new Circle(2, "ìë°” ë„ë„›");
-		System.out.println(donut.name+"ë©´ì  : "+donut.getArea());
+		donut = new Circle(2, "ÀÚ¹Ù µµ³Ó");
+		System.out.println(donut.name+"¸éÀû : "+donut.getArea());
+		
+		Circle[] c = new Circle[5];
+		for (int i = 0; i < c.length; i++) {
+			c[i] = new Circle(i);
+		}
+		
+		for (int i = 0; i < c.length; i++) {
+			System.out.println("¿øÀÇ ¸éÀû : " + c[i].getArea());
+		}
+		
+		for (Circle circle : c) { // for each¹® for (µ¥ÀÌÅÍÅ¸ÀÔ ÀÌ¸§ : ¹è¿­)
+			System.out.println("¹İÁö¸§ : " + circle.radius);
+		}
+		
+		
+
+		/*
+		int[] a = new int[5];
+		for (int i = 0; i < a.length; i++) {}
+		for (int b : a) {}
+		
+		String[] q = new String[3];
+		for (int i = 0; i < 3; i++) {}
+		for (String df : q) {}
+		
+		double[] p = new double[4];
+		for (int i = 0; i < p.length; i++) {}
+		for (double dd : p) {}*/
+		
+		
 	}
 
 }
+
