@@ -1,0 +1,59 @@
+Public Class Form1
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim score As Integer
+        Dim grade As String
+
+        score = TextBox1.Text
+
+        '2023.4.12 goto 대신 if else로 처리(시작)
+        'If score > 100 Or score < 0 Then
+        '    MsgBox("점수는 0 ~ 100 사이로 입력해주세요")
+        '    TextBox1.Focus()
+        '    TextBox1.SelectionStart = 0
+        '    TextBox1.SelectionLength = TextBox1.TextLength
+        '    GoTo break
+        'End If
+
+
+        If score > 100 Or score < 0 Then
+            MsgBox("점수는 0 ~ 100 사이로 입력해주세요")
+            TextBox1.Focus()
+            TextBox1.SelectionStart = 0
+            TextBox1.SelectionLength = TextBox1.TextLength
+        Else
+            If score >= 96 Then
+                grade = "A+"
+            ElseIf score >= 91 Then
+                grade = "A0"
+            ElseIf score >= 86 Then
+                grade = "b+"
+            ElseIf score >= 81 Then
+                grade = "B0"
+            ElseIf score >= 76 Then
+                grade = "C+"
+            ElseIf score >= 71 Then
+                grade = "C0"
+            ElseIf score >= 66 Then
+                grade = "D+"
+            ElseIf score >= 60 Then
+                grade = "D0"
+            Else
+                grade = "F"
+
+            End If
+
+
+            TextBox2.Text = score
+            TextBox3.Text = grade
+        End If
+
+
+
+
+break:
+    End Sub
+End Class
